@@ -9,7 +9,7 @@ const memberRoutes = require("./routes/member");
 const app = express();
 const port = process.env.NODE_LOCAL_PORT;
 
-app.use(express.urlencoded({ extended: false }));
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 //app.use("/api/admin", adminRoutes);

@@ -1,6 +1,6 @@
 
 
-const member = require("../models/Member")
+const Member = require("../models/Member")
 
 const registerMember = async (req, res) => {
     // First Validate The Request
@@ -10,14 +10,14 @@ const registerMember = async (req, res) => {
         return res.status(400).send(error.details[0].message);
     }
     */
-
+   try{
     // Check if this user already exisits
-    let new_member = await member.Member.findOne({ email: req.body.email });
+    let new_member = await Member.findOne({ email: req.body.email });
     if (new_member) {
         return res.status(400).send('Already a member');
     } else {
         // Insert the new user if they do not exist yet
-        new_member = new member.Member({
+        new_member = new Member({
 
             first_name: req.body.first_name,
             last_name: req.body.last_name,
@@ -35,7 +35,11 @@ const registerMember = async (req, res) => {
 
         await new_member.save();
         res.send(new_member);
-    }
+        }
+   } catch (e) {
+    res.end(e.message || e.toString());
+  }
+
 };
 
 module.exports = registerMember

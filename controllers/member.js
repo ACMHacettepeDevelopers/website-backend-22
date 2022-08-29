@@ -11,12 +11,12 @@ const registerMember = async (req, res) => {
     }
     */
    try{
-    // Check if this user already exisits
+    // Check if this member already exisits
     let new_member = await Member.findOne({ email: req.body.email });
     if (new_member) {
         return res.status(400).send('Already a member');
     } else {
-        // Insert the new user if they do not exist yet
+        // Insert the new member if they do not exist yet
         new_member = new Member({
 
             first_name: req.body.first_name,
@@ -28,7 +28,7 @@ const registerMember = async (req, res) => {
             first_choice_coord: req.body.first_choice_coord,
             second_choice_coord: req.body.second_choice_coord,
             phone_number: req.body.phone_number,
-            date_of_birth: req.body.date_of_birth,
+            date_of_birth: new Date(req.body.date_of_birth),
             password: req.body.password,
             is_active_member: req.body.is_active_member
         });

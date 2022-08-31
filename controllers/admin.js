@@ -3,7 +3,7 @@ const Member = models.Member;
 
 // TODO send response in case of possible exceptions and errors!
 
-const showUnitMembers = async (req, res) => {
+const getUnitMembers = async (req, res) => {
     try {
         const { unit } = req.params;
         const members = await Member.find({ unit: unit });

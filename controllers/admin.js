@@ -7,9 +7,9 @@ const getUnitMembers = async (req, res) => {
     try {
         const { unit } = req.params;
         const members = await Member.find({ unit: unit });
-        res.send(members)
+        res.status(200).send(members)
     } catch (e) {
-        console.log(e);
+        res.status(500).send(e)
     }
 };
 

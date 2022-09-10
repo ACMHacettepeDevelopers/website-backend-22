@@ -45,21 +45,6 @@ const adminSchema = new mongoose.Schema({
     degree: {
         type: String,
         required: true
-    },
-
-    activeUser: {
-        type: Boolean,
-        required: true
-    },
-
-    whatsappGroupStatus: {
-        type: Boolean,
-        required: true
-    },
-
-    newsletterSubscription: {
-        type: Boolean,
-        required: true
     }
 });
 

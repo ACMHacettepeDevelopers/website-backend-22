@@ -1,6 +1,6 @@
 
 
-const Member = require("../models/Member")
+const Member = require("../models/member")
 
 const registerMember = async (req, res) => {
     // First Validate The Request

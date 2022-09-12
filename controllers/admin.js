@@ -1,4 +1,4 @@
-const models = require("../models/users");
+const memberModel = require("../models/member");
 const Member = models.Member;
 
 // TODO send response in case of possible exceptions and errors!

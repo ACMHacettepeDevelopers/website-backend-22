@@ -32,7 +32,7 @@ const adminSchema = new mongoose.Schema({
         required: true
     },
 
-    unit: {
+    coordinatorship: {
         type: String,
         required: true
     },
@@ -42,7 +42,7 @@ const adminSchema = new mongoose.Schema({
         required: true
     },
 
-    degree: {
+    class: {
         type: String,
         required: true
     }
@@ -89,7 +89,7 @@ const memberSchema = new mongoose.Schema({
         required: true
     },
 
-    unit: {
+    coordinatorship: {
         type: String,
         required: true
     },

@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
+//sosyal etkinlik, teknik etkinlik, halkla ilişkiler, kurumsal ilişkiler, reklam tanıtım 
 // add validations later in case of possible errors 
 
 const memberSchema = new mongoose.Schema({
@@ -36,11 +37,13 @@ const memberSchema = new mongoose.Schema({
 
     first_choice_coord: {
         type: String,
+        enum : ["Sosyal Etkinlik Koordinatörlüğü", "Teknik Etkinlik Koordinatörlüğü", "Halkla İlişkiler Koordinatörlüğü", "Kurumsal İlişkiler Koordinatörlüğü", "Reklam Tanıtım Koordinatörlüğü"], 
         required: true
     },
 
     second_choice_coord: {
         type: String,
+        enum : ["Sosyal Etkinlik Koordinatörlüğü", "Teknik Etkinlik Koordinatörlüğü", "Halkla İlişkiler Koordinatörlüğü", "Kurumsal İlişkiler Koordinatörlüğü", "Reklam Tanıtım Koordinatörlüğü"], 
         required: true
     },
 
